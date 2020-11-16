@@ -1,0 +1,19 @@
+<p>personas works!</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOMBRE</th>
+      <th>E-MAIL</th>
+      <th>EDAD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas">
+      <td>{{ persona.IdPersona }}</td>
+      <td>{{ persona.Nombre }}</td>
+      <td>{{ persona.Email }}</td>
+      <td>{{ persona.Edad }}</td>
+    </tr>
+  </tbody>
+</table>

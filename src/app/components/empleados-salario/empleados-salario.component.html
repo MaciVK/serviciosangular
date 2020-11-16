@@ -1,0 +1,39 @@
+<h1>Buscador Empleados x Salario</h1>
+<form #salariosForm="ngForm">
+  <label>Salario: </label>
+  <input type="number" class="form-control" #cajaSalario />
+  <button class="btn btn-success" (click)="buscarEmpleados()">
+    Buscar Empleados
+  </button>
+</form>
+<hr />
+
+<form #oficiosForm="ngForm">
+  <label>Buscar por Oficio: </label>
+  <select (change)="getEmpleadosOficios()" class="custom-select" #selectOficio>
+    <option *ngFor="let oficio of oficios" value="{{ oficio }}">
+      {{ oficio }}
+    </option>
+  </select>
+</form>
+<br />
+<table class="table table-bordered" *ngIf="empleados.length > 0">
+  <thead>
+    <tr>
+      <th scope="col">idEmpleado</th>
+      <th scope="col">apellido</th>
+      <th scope="col">oficio</th>
+      <th scope="col">salario</th>
+      <th scope="col">departamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <th scope="row">{{ empleado.idEmpleado }}</th>
+      <td>{{ empleado.apellido }}</td>
+      <td>{{ empleado.oficio }}</td>
+      <td>{{ empleado.salario }}</td>
+      <td>{{ empleado.departamento }}</td>
+    </tr>
+  </tbody>
+</table>

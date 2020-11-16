@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+  <thead>
+    <th scope="col">ID COCHE</th>
+    <th scope="col">MARCA</th>
+    <th scope="col">MODELO</th>
+    <th scope="col">CONDUCTOR</th>
+    <th scope="col">IMAGEN</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coche of coches">
+      <th scope="row">{{ coche.idcoche }}</th>
+      <td>{{ coche.marca }}</td>
+      <td>{{ coche.modelo }}</td>
+      <td>{{ coche.conductor }}</td>
+      <td>
+        <img src="{{ coche.imagen }}" style="width: 150px; height: 150px" />
+      </td>
+    </tr>
+  </tbody>
+</table>
