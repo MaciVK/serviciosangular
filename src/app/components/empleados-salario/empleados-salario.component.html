@@ -11,9 +11,12 @@
 <form #oficiosForm="ngForm">
   <label>Buscar por Oficio: </label>
   <select (change)="getEmpleadosOficios()" class="custom-select" #selectOficio>
-    <option *ngFor="let oficio of oficios" value="{{ oficio }}">
-      {{ oficio }}
-    </option>
+    <!-- En vez de React Fragment, existe el <ng-container></ng-container> -->
+    <ng-container>
+      <option *ngFor="let oficio of oficios" value="{{ oficio }}">
+        {{ oficio }}
+      </option>
+    </ng-container>
   </select>
 </form>
 <br />

@@ -1,0 +1,24 @@
+<h1 style="color: blueviolet">Empleados API con Routing</h1>
+<table class="table table-stripped">
+  <thead>
+    <th>Apellido</th>
+    <th>Oficio</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{ empleado.apellido }}</td>
+      <td>{{ empleado.oficio }}</td>
+      <td>
+        <!-- tambien se puede concatenar:
+          [routerLink]="['/detallesempleado/'+ empleado.idEmpleado]"    
+ -->
+        <a
+          [routerLink]="['/detallesempleado', empleado.idEmpleado]"
+          class="btn btn-outline-success"
+          >Detalles</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
